@@ -22,7 +22,7 @@ public class JsonServiceImplements implements JsonService {
     }
 
     public Boolean create(JSONObject json) {
-        if (jsonRepository.getJson() != null) return false;
+        if (!jsonRepository.getJson().getValues().isEmpty()) return false;
         Json jsonExist = new Json();
         jsonExist.setValues(createMap(json));
         jsonRepository.setJson(jsonExist);
@@ -31,7 +31,7 @@ public class JsonServiceImplements implements JsonService {
 
     public Boolean replace(JSONObject json) {
         Json jsonExist = jsonRepository.getJson();
-        if (jsonExist == null) return false;
+        if (jsonExist.getValues().isEmpty()) return false;
         jsonExist.setValues(createMap(json));
         jsonRepository.setJson(jsonExist);
         return true;
@@ -39,7 +39,7 @@ public class JsonServiceImplements implements JsonService {
 
     public Boolean update(JSONObject json) {
         Json jsonExist = jsonRepository.getJson();
-        if (jsonExist == null) return false;
+        if (jsonExist.getValues().isEmpty()) return false;
         jsonExist.setValues(joinMap(json, jsonRepository.getJson()));
         jsonRepository.setJson(jsonExist);
         return true;
