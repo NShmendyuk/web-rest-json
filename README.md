@@ -21,7 +21,7 @@ GET, PUT и PATCH запросы без созданного объекта:
 ![GET noentity](https://github.com/NShmendyuk/web-rest-json/blob/develop/img/noentity/postman_GET_noentity.png)
 
 ___
-![PUT noentity](https://github.com/NShmendyuk/web-rest-json/blob/develop/img/noentity/postman_PUT_noentity.png);
+![PUT noentity](https://github.com/NShmendyuk/web-rest-json/blob/develop/img/noentity/postman_PUT_noentity.png) 
 
 ___
 ![PATCH noentity](https://github.com/NShmendyuk/web-rest-json/blob/develop/img/noentity/postman_PATCH_noentity.png)
