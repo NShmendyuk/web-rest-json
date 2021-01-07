@@ -1,6 +1,6 @@
-# web-rest-json
-Simple web project with rest api
-![](https://github.com/Nshmendyuk/web-west-json/workflows/Java%20CI/badge.svg)
+# Simple web project with rest api
+
+![](https://github.com/Nshmendyuk/web-rest-json/workflows/Java%20CI/badge.svg)
 ___
 Простое Java Spring приложение, показывающее работу REST API
 ## Getting Started
@@ -20,23 +20,25 @@ ___
 GET, PUT и PATCH запросы без созданного объекта:
 ![GET noentity](https://github.com/NShmendyuk/web-rest-json/blob/develop/img/noentity/postman_GET_noentity.png)
 
-![PUT noentity](https://github.com/NShmendyuk/web-rest-json/blob/develop/img/noentity/postman_PUT_noentity.png)
+___
+![PUT noentity](https://github.com/NShmendyuk/web-rest-json/blob/develop/img/noentity/postman_PUT_noentity.png);
 
+___
 ![PATCH noentity](https://github.com/NShmendyuk/web-rest-json/blob/develop/img/noentity/postman_PATCH_noentity.png)
 
 POST запрос - создание объекта:
 ![POST](https://github.com/NShmendyuk/web-rest-json/blob/develop/img/created/postman_POST_created.png)
-
+___
 ![GET created](https://github.com/NShmendyuk/web-rest-json/blob/develop/img/created/postman_GET_created.png)
 
 PUT запрос - замена объекта:
 ![PUT](https://github.com/NShmendyuk/web-rest-json/blob/develop/img/replaced/postman_PUT_replaced.png)
-
+___
 ![GET replaced](https://github.com/NShmendyuk/web-rest-json/blob/develop/img/replaced/postman_GET_replaced.png)
 
-PATCH запрос - замена объекта:
+PATCH запрос - изменение объекта:
 ![PATCH](https://github.com/NShmendyuk/web-rest-json/blob/develop/img/updated/postman_PATCH_updated.png)
-
+___
 ![GET updated](https://github.com/NShmendyuk/web-rest-json/blob/develop/img/updated/postman_GET_updated.png)
 
 ## Built with
