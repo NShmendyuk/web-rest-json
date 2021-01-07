@@ -1,6 +1,7 @@
 package ru.webitmo.restapi.service;
 
 import org.json.simple.JSONObject;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Service;
 import ru.webitmo.restapi.dto.Json;
 import ru.webitmo.restapi.repository.JsonRepository;
@@ -18,11 +19,15 @@ public class JsonServiceImplements implements JsonService {
     }
 
     public JSONObject get() {
-        return new JSONObject(jsonRepository.getJson().getValues());
+        try {
+            return new JSONObject(jsonRepository.getJson().getValues());
+        } catch (NullPointerException ex) {
+            return null;
+        }
     }
 
     public Boolean create(JSONObject json) {
-        if (!jsonRepository.getJson().getValues().isEmpty()) return false;
+        if (jsonRepository.getJson() != null) return false;
         Json jsonExist = new Json();
         jsonExist.setValues(createMap(json));
         jsonRepository.setJson(jsonExist);
@@ -31,7 +36,7 @@ public class JsonServiceImplements implements JsonService {
 
     public Boolean replace(JSONObject json) {
         Json jsonExist = jsonRepository.getJson();
-        if (jsonExist.getValues().isEmpty()) return false;
+        if (jsonExist == null) return false;
         jsonExist.setValues(createMap(json));
         jsonRepository.setJson(jsonExist);
         return true;
@@ -39,7 +44,7 @@ public class JsonServiceImplements implements JsonService {
 
     public Boolean update(JSONObject json) {
         Json jsonExist = jsonRepository.getJson();
-        if (jsonExist.getValues().isEmpty()) return false;
+        if (jsonExist == null) return false;
         jsonExist.setValues(joinMap(json, jsonRepository.getJson()));
         jsonRepository.setJson(jsonExist);
         return true;
