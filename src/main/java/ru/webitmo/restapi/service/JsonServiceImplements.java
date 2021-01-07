@@ -59,12 +59,9 @@ public class JsonServiceImplements implements JsonService {
 
     public Map<String, Object> joinMap(JSONObject jsonNewData, Json jsonToUpdate) {
         Map<String, Object> mapJoined = jsonToUpdate.getValues();
-        Set keySetExist = mapJoined.keySet();
         Set keySetNew = jsonNewData.keySet();
         keySetNew.forEach(keyStr -> {
-            if (!keySetExist.contains(keyStr)) {
                 mapJoined.put((String) keyStr, jsonNewData.get(keyStr));
-            }
         });
         return mapJoined;
     }
